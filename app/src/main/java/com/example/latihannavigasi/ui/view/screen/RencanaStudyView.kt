@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
@@ -148,6 +149,22 @@ fun RencanaStudiView(
                         }
 
                     }
+                }
+                Spacer(modifier = Modifier.padding(8.dp))
+                HorizontalDivider()
+                Spacer(modifier = Modifier.padding(8.dp))
+                Text(text = "Klausul Persetujuam Mahasiswa", fontWeight = FontWeight.Bold)
+                Row (verticalAlignment = Alignment.CenterVertically
+                ){
+                    Checkbox(
+                        checked = checked,
+                        onCheckedChange = {checked = it},
+                        enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
+                    )
+                    Text(
+                        text = "Saya Menyetujui Setiap Pernyataan Yang Ada Tanpa Paksaan Dari Pihak Manapun.",
+                        fontWeight = FontWeight.Light, fontSize = 10.sp
+                    )
                 }
             }
         }
