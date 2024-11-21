@@ -2,6 +2,7 @@ package com.example.latihannavigasi.ui.view.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,7 +15,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.latihannavigasi.R
 import com.example.latihannavigasi.data.MataKuliah
+import com.example.latihannavigasi.data.RuangKelas
 import com.example.latihannavigasi.model.Mahasiswa
 import com.example.latihannavigasi.ui.widget.DynamicSelectedField
 
@@ -120,6 +124,31 @@ fun RencanaStudiView(
                         chosenDropdown
                     }
                 )
+                Spacer(modifier = Modifier.padding(8.dp))
+                HorizontalDivider()
+                Spacer(modifier = Modifier.padding(8.dp))
+                Text(text = "Pilih Kelas Belajar", fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Silahkan pilih kelas dari mata kuliah yang anda inginkan",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row (modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ){
+                    RuangKelas.kelas.forEach{data ->
+                        Row (verticalAlignment = Alignment.CenterVertically
+                        ){
+                            RadioButton(
+                                selected = pilihanKelas == data,
+                                onClick = {pilihanKelas = data}
+                            )
+                            Text(data)
+                        }
+
+                    }
+                }
             }
         }
     }
