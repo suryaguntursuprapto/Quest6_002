@@ -7,20 +7,19 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class MahasiswaViewModel: ViewModel(){
+class MahasiswaViewModel : ViewModel() {
     private val _dataModel = MutableStateFlow(Mahasiswa())
     val dataModel: StateFlow<Mahasiswa> = _dataModel.asStateFlow()
 
     fun saveDataMhs(
         listData: MutableList<String>
     ) {
-        _dataModel.update  { mhs ->
-            mhs.(
+        _dataModel.update { mhs ->
+            mhs.copy(
                 nama = listData[0],
                 nim = listData[1],
-                email = listData[2],
+                email = listData[2]
             )
         }
     }
-
 }

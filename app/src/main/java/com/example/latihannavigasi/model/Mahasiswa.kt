@@ -1,6 +1,6 @@
 package com.example.latihannavigasi.model
 
-class Mahasiswa (
+data class Mahasiswa (
     val nim: String = "",
     val nama: String = "",
     val email: String = ""
