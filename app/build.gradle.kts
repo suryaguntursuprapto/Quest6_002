@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.latihannavigasi"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.latihannavigasi"
@@ -66,4 +66,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation ("androidx.compose.material3:material3:1.1.0" )
+    implementation ("androidx.compose.ui:ui:1.5.0" )
+    implementation ("androidx.compose.material3:material3-window-size-class:1.1.0" )
+
+
 }

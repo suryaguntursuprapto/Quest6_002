@@ -9,12 +9,14 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -49,19 +51,19 @@ fun DynamicSelectedField(
                 .menuAnchor()
                 .fillMaxWidth()
         )
-    }
 
-    ExposedDropdownMenu(expanded = expanded,
-        onDismissRequest = {expanded=false}
-    ) {
-        options.forEach{option: String->
-            DropdownMenuItem(
-                text = { Text(text = option) },
-                onClick = {
-                    expanded = false
-                    onValueChangedEvent(option)
-                }
-            )
+
+        ExposedDropdownMenu(expanded = expanded,
+            onDismissRequest = { expanded = false }) {
+            options.forEach { option: String ->
+                DropdownMenuItem(
+                    text = { Text(text = option) },
+                    onClick = {
+                        expanded = false
+                        onValueChangedEvent(option)
+                    }
+                )
+            }
         }
     }
 }
