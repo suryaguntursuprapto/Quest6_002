@@ -66,7 +66,7 @@ fun MahasiswaApp(
             DetailMahasiswaView(
                 dataMhs = mahasiswaUiState,
                 dataKrs = krsViewModel.krsStateUi.collectAsState().value, // Pass dataKrs here
-                onSubmitClick = {
+                onBackButtonClicked = {
                     navController.popBackStack()
                 }
             )
