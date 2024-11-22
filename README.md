@@ -5,4 +5,4 @@ Halaman 2
 Halaman 3
 ![formKRS](https://github.com/user-attachments/assets/97047afb-bf1e-4d63-9fe3-fe1290b27c00)
 Halaman 4
-![tampildata](https://github.com/user-attachments/assets/95dffc87-4c14-4dfa-9f6d-194c86012339)
+![tampildata11](https://github.com/user-attachments/assets/bbb10b62-0774-4784-b341-27c3fdb51eb3)
