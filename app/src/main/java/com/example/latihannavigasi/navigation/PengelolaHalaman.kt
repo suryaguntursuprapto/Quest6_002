@@ -1,5 +1,6 @@
 package com.example.latihannavigasi.navigation
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
@@ -7,7 +8,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.latihannavigasi.ui.view.screen.SplashScreenView
 import com.example.latihannavigasi.ui.view.viewmodel.MahasiswaViewModel
 import com.example.latihannavigasi.ui.view.viewmodel.RencanaStudyViewModel
 
@@ -25,5 +29,18 @@ fun MahasiswaApp(
     krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
-
+    val mahasiswaUiState = mahasiswaViewModel.dataModel.collectAsState().value
+    NavHost(
+        navController = navController,
+        startDestination = Halaman.Splash.name,
+        modifier = Modifier.padding()
+    ){
+        composable(route = Halaman.Splash.name){
+            SplashScreenView(onMulaiButton = {
+                navController.navigate(
+                    Halaman.Mahasiswa.name
+                )
+            })
+        }
+    }
 }
