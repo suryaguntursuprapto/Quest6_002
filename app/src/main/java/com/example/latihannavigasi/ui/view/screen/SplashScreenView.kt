@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,8 +25,8 @@ import com.example.latihannavigasi.R
 @Composable
 fun SplashScreenView(
     onMulaiButton: () -> Unit,
-){
-    Column (
+) {
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(
@@ -34,12 +36,13 @@ fun SplashScreenView(
             ),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         Image(
             painter = painterResource(
                 id = R.drawable.umy
             ),
-            contentDescription = ""
+            contentDescription = "",
+            modifier = Modifier.size(150.dp)
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(
@@ -47,7 +50,7 @@ fun SplashScreenView(
                 onMulaiButton()
             },
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(32.dp)
         ) {
             Text("Mulai")
