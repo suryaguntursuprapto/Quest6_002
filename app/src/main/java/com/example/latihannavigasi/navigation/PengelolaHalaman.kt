@@ -4,9 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -65,8 +63,6 @@ fun MahasiswaApp(
     }
 }
 
-fun MahasiswaFormView(onSubmitButtonClicked: (MutableList<String>) -> Unit, onBackButtonClicked: () -> Unit) {
 
-}
 
 
